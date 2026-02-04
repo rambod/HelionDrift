@@ -1,5 +1,7 @@
 add_library(helion_core STATIC
         core.cpp
+        log.cpp
+        log.h
 )
 
 helion_enable_warnings(helion_core)
