@@ -1,3 +1,6 @@
+#include "application.h"
+
+
 #include <iostream>
 #include "log.h"
 
@@ -7,6 +10,8 @@ int main()
 
     LOG_INFO("Helion Drift Start up");
     LOG_TRACE("Trace logging enabled");
+    helion::application app;
+    app.run();
 
     return 0;
 }

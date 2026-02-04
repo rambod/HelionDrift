@@ -1,5 +1,7 @@
 add_executable(helion_drift
         main.cpp
+        Application.cpp
+        Application.h
 )
 
 helion_enable_warnings(helion_drift)
