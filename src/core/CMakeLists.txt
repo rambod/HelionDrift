@@ -2,6 +2,8 @@ add_library(helion_core STATIC
         core.cpp
         log.cpp
         log.h
+        assert.cpp
+        assert.h
 )
 
 helion_enable_warnings(helion_core)
