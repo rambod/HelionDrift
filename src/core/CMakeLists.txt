@@ -1,7 +1,12 @@
-cmake_minimum_required(VERSION 4.1)
 add_library(helion_core STATIC
         core.cpp
 )
+
+helion_enable_warnings(helion_core)
+if (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
+    helion_warnings_as_errors(helion_core)
+endif()
+
 
 target_include_directories(helion_core
         PUBLIC

@@ -1,7 +1,13 @@
-cmake_minimum_required(VERSION 4.1)
 add_library(helion_simulation STATIC
         simulation.cpp
 )
+
+helion_enable_warnings(helion_simulation)
+if (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
+    helion_warnings_as_errors(helion_simulation)
+endif()
+
+
 
 target_include_directories(helion_simulation
         PUBLIC
