@@ -11,6 +11,13 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+add_custom_target(format
+        COMMAND clang-format -i
+        ${CMAKE_SOURCE_DIR}/src/app/main.cpp
+        ${CMAKE_SOURCE_DIR}/src/core/core.cpp
+        ${CMAKE_SOURCE_DIR}/src/simulation/simulation.cpp
+)
+
 add_subdirectory(src/core)
 add_subdirectory(src/simulation)
 add_subdirectory(src/app)
