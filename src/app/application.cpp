@@ -5,7 +5,7 @@
 #include "application.h"
 #include "log.h"
 #include "profiler.h"
-
+#include "renderer.h"
 #include <chrono>
 #include <thread>
 
@@ -19,6 +19,8 @@ LOG_INFO("Application stopped");
 }
     void application::run()
      {
+         helion::renderer renderer;
+
          using clock = std::chrono::steady_clock;
          LOG_INFO("Application starting main loop");
          auto previousTime = clock::now();
@@ -55,6 +57,9 @@ LOG_INFO("Application stopped");
              }
              //sleep a bit to avoid burning CPU
              std::this_thread::sleep_for(std::chrono::milliseconds(1));
+             renderer.begin_frame();
+             // nothing drawn yet
+             renderer.end_frame();
          }
          LOG_INFO("Application main loop exited");
 
